@@ -6,7 +6,7 @@ import { PullRequestReviewsModule } from './pull-request-reviews/pull-request-re
 import { ReviewCommentsModule } from './review-comments/review-comments.module';
 import { MetricsModule } from './metrics/metrics.module';
 import { UsersModule } from './users/users.module';
-import { OrganizationsModule } from './organizations/organizations.module';
+import { OrganizationsModule } from './Application/organizations/organizations.module';
 import { TeamsModule } from './teams/teams.module';
 
 @Module({
