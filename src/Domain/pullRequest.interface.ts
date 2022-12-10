@@ -1,5 +1,6 @@
-export interface PullRequestInterface {
-    id: bigint;
-    user_id: bigint;
-    merged_at: string;
-  }
+export interface IPullRequestInterface {
+  user_id: bigint;
+  userName: string;
+  merged_at: string;
+  getPrExecuteCount: () => Promise<string>;
+}
