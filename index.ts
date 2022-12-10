@@ -1,3 +1,4 @@
+import {GetExecutedPullRequestsCount} from "./src/Application/UseCases/GetExecutedPullRequestsCount";
 const prompt = require('prompt-sync')({ sigint: true });
 import { AppDataSource } from "./data-source"
 import * as yargs from 'yargs'
