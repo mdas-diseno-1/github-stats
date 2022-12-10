@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "typeorm": "typeorm-ts-node-commonjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/ts-node/dist/bin.js index.ts",
     "startDebug": "./node_modules/ts-node/dist/bin.js --inspect index.ts"
@@ -13,13 +14,16 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.2.1",
+    "mysql": "^2.18.1",
     "prompt-sync": "^4.2.0",
-    "ts-node": "^10.9.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.11",
     "typescript": "^4.9.4",
     "yargs": "^17.6.2"
   },
   "devDependencies": {
-    "@types/node": "^18.11.11",
-    "@types/yargs": "^17.0.17"
+    "@types/node": "^18.11.13",
+    "@types/yargs": "^17.0.17",
+    "ts-node": "^10.9.1"
   }
 }
