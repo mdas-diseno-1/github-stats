@@ -22,7 +22,12 @@ const asyncGetuser = (userName: string) => {
 }
 
 export const syncGePullRequestExecuted = async (userName: string, month: string) => {
-    const response = await axios.get(`${API_ENDPOINT}/search/issues?q=type:pr+author:${userName}+created:${month}`);
+    console.log(` user name: ${userName} , month: ${month}`);
+    const response = await axios.get(`${API_ENDPOINT}/search/issues?q=type:pr+author:${userName}+created:${month}`, {
+        headers: {
+            'Authorization': 'Bearer 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'
+        }
+    });
     return response.data.total_count;
 }
 
