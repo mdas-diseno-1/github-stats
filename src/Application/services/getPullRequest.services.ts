@@ -1,3 +1,6 @@
+import { resolve } from "path";
+import { string } from "yargs";
+
 var axios = require('axios');
 var data = '';
 const API_ENDPOINT = 'https://api.github.com';
@@ -18,13 +21,12 @@ const asyncGetuser = (userName: string) => {
         });
 }
 
-export const syncGetUser = async (userName: string) => {
-    const month = '2022-11'
-    const response = await axios.get(`${API_ENDPOINT}/search/issues?q=type:pr+author:${userName}+create:${month}`)
-    console.log(response.data);
+export const syncGePullRequestExecuted = async (userName: string, month: string) => {
+    const response = await axios.get(`${API_ENDPOINT}/search/issues?q=type:pr+author:${userName}+created:${month}`);
+    return response.data.total_count;
 }
 
 export default {
-    syncGetUser,
+    syncGePullRequestExecuted,
     asyncGetuser
 }
