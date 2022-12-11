@@ -3,12 +3,11 @@ import { string } from "yargs";
 
 const axios = require('axios');
 let data = '';
-const API_ENDPOINT = 'https://api.github.com';
 
 const asyncGetUser = (userName: string) => {
     const config = {
         method: 'get',
-        url: `${API_ENDPOINT}/users/${userName}/repos`,
+        url: `${process.env.GITHUB_API}/users/${userName}/repos`,
         data: data
     };
 
