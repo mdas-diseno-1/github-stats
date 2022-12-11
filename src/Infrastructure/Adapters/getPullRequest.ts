@@ -9,9 +9,9 @@ export const syncGetPullRequestsExecuted = async (userName: string, month: strin
     const headers = {
         'Authorization': `Bearer ${process.env.GITHUB_TOKEN} `
     };
-    const config = {headers: headers}
-    return axios.get(`${process.env.GITHUB_API}/search/issues?q=type:pr+author:${userName}+created:${month}`, config)
-        .then((res) => res.data.count);
+    const config = { headers: headers }
+    const response = await axios.get(`${process.env.GITHUB_API}/search/issues?q=type:pr+author:${userName}+created:${month}`, config);
+    return response.data.total_count;
 }
 
 export default {
