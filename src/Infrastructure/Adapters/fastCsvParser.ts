@@ -10,7 +10,6 @@ export class fastCsvParser implements IFileParserInterface{
             .on('error', error => console.error(error))
             .on('data', row => {
                 console.log(row);
-                //each row can be written to db
                 data.push(row);
             })
             .on('end', (rowCount: number) => console.log(`Parsed ${rowCount} rows`));
