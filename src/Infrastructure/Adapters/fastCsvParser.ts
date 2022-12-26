@@ -1,6 +1,6 @@
 const fs = require("fs");
 const csv = require("fast-csv");
-import {IFileParserInterface} from "../../Domain/FileParser";
+import { IFileParserInterface } from "../../Domain/FileParser";
 
 export class fastCsvParser implements IFileParserInterface{
     public readFile (filePath: string): Promise<any[]>{
