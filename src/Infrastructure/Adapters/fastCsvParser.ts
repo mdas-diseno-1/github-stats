@@ -1,16 +1,30 @@
-
-import {IFileParserInterface} from "../../Domain/FileParser";
 const fs = require("fs");
-const fastCsv = require("fast-csv");
+const csv = require("fast-csv");
+import {IFileParserInterface} from "../../Domain/FileParser";
+import {format} from "fast-csv";
+
 export class fastCsvParser implements IFileParserInterface{
-    
-    
     public readFile (filePath: string): Promise<boolean>{
-        return Promise.resolve(false);
+        let data = [];
+        fs.createReadStream(filePath)
+            .pipe(csv.parse({ headers: false }))
+            .on('error', error => console.error(error))
+            .on('data', row => {
+                console.log(row);
+                //each row can be written to db
+                data.push(row);
+            })
+            .on('end', (rowCount: number) => console.log(`Parsed ${rowCount} rows`));
+        return Promise.resolve(true);
     }
 
-    writeFile(data: any[]): Promise<boolean> {
-        return Promise.resolve(false);
+    writeFile(user: string, pullRequest: number, month: number, year: number): Promise<boolean> {
+        const stream = format({ headers:true });
+        stream.pipe(fs.createWriteStream("../../Reports/" + user + month + year + ".csv"))
+        stream.write([user, pullRequest, month, year])
+        stream.on('error', error => console.error(error));
+        stream.on('end', (rowCount: number) => console.log(`Parsed ${rowCount} rows`));
+        return Promise.resolve(true);
     }
 
 }
