@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  #MYSQL Container
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:8.0.31
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: githubstats
+      MYSQL_USER: githubstats
+      MYSQL_PASSWORD: githubstats
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysqldb
+    ports:
+      - '3306:3306'
+    networks:
+      - github-stats
+    volumes:
+      - ./docker/local/mysql:/docker-entrypoint-initdb.d
+    command: [ '--default-authentication-plugin=mysql_native_password']
+networks:
+    github-stats:
+      driver: bridge
+

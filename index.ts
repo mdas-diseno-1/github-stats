@@ -1,12 +1,10 @@
 import { GetExecutedPullRequestsCount } from "./src/Application/UseCases/GetExecutedPullRequestsCount";
-const prompt = require('prompt-sync')({ sigint: true });
 import { AppDataSource } from "./src/data-source"
 import * as yargs from 'yargs'
 import { resolve } from "path";
 import * as dotenv from "dotenv";
-
 dotenv.config();
-
+const prompt = require('prompt-sync')({ sigint: true });
 
 AppDataSource.initialize().then(async () => { }).catch(error => console.log(error))
 
