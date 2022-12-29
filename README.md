@@ -12,14 +12,8 @@ $ npm run typeorm migration:run -- -d src/data-source
 ## Running the app
 
 ```bash
-# development
+# Execute applicataion
 $ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
 ## Test
