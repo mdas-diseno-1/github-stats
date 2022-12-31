@@ -1,5 +1,6 @@
 ## Description
-
+CLI application that can be used to obtain statistics related to github 
+usage and activity of each user inside an organization. 
 
 ## Installation
 
@@ -27,5 +28,5 @@ $ npm run test
 
 - Santiago Ibarzabal
 - Rami Aloui
-- Laura GF
-- Jota
+- Laura Gutiérrez Fariñas
+- José Jesús Hernandez Bruno
