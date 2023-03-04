@@ -1,7 +1,6 @@
 import { AppDataSource } from "../../data-source";
 import {UserActivityData} from "../../Domain/Entities/UserActivityData";
 
-
 export class UserActivityDataRepository {
     repository = AppDataSource.getRepository(UserActivityData);
     public get() {

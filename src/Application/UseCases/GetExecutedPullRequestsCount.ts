@@ -1,4 +1,4 @@
-import getPullRequest from '../../Infrastructure/Adapters/getPullRequest';
+import getPullRequest from '../../Infrastructure/Repositories/PullRequestRepository';
 
 export class GetExecutedPullRequestsCount {
     userName: string;
