@@ -1,5 +1,5 @@
 import { UserActivityData } from "../../Domain/Entities/UserActivityData";
-import { ICsvRepository } from "../../Domain/interfaces/ICsvRepository";
+import { ICsvRepository } from "../../Domain/Interfaces/ICsvRepository";
 const fs = require('fs');
 const csv = require('csv-parse');
 import * as fastcsv from 'fast-csv';

@@ -1,7 +1,7 @@
 import { GetExecutedPullRequestsCount } from "./GetExecutedPullRequestsCount";
 import { UserActivityData } from "../../Domain/Entities/UserActivityData";
-import { ICsvRepository } from "../../Domain/interfaces/ICsvRepository";
-import { CsvRepositoryImpl } from "../../Infrastructure/Adapters/CsvRepository";
+import { ICsvRepository } from "../../Domain/Interfaces/ICsvRepository";
+import { CsvRepositoryImpl } from "../../Infrastructure/Repositories/CsvRepository";
 
 export class GetGithubStatsByUser {
     userActivityData = new UserActivityData();
