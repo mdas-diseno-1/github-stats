@@ -12,7 +12,7 @@ export class ExecutedPullRequests implements IPullRequestInterface {
     }
 
     public count(): Promise<string> {
-        return getPullRequest.syncGetPullRequestsExecuted(this.userName, this.month);
+        return getPullRequest.asyncGetPullRequestsExecuted(this.userName, this.month);
     }
 
 }
