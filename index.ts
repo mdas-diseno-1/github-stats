@@ -1,4 +1,5 @@
 import { GetExecutedPullRequestsCount } from "./src/Application/UseCases/GetExecutedPullRequestsCount";
+import { GetGithubStatsByUser } from "./src/Application/UseCases/GetGithubStatsByUser"
 import { AppDataSource } from "./src/data-source"
 import * as yargs from 'yargs'
 import { resolve } from "path";
@@ -10,11 +11,8 @@ AppDataSource.initialize().then(async () => { }).catch(error => console.log(erro
 
 const name = prompt('What is your name? ');
 const month = prompt('What month (YYYY-MM): ');
-const executedPullRequestsCount = new GetExecutedPullRequestsCount(name, month);
-
-executedPullRequestsCount.execute().then((value) => {
-    console.log(value);
-});
+const executedGetGithubsStats = new GetGithubStatsByUser(name, month);
+executedGetGithubsStats.execute();
 
 // const { argv } = yargs.option("userName", { describe: "GitHub user name" })
 // const userName = argv["_"];

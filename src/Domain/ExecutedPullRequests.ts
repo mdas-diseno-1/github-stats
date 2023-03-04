@@ -1,6 +1,5 @@
 import getPullRequest from '../Infrastructure/Adapters/getPullRequest';
-import { IPullRequestInterface } from './PullRequest'
-import { string } from 'yargs';
+import { IPullRequestInterface } from './interfaces/PullRequest'
 
 export class ExecutedPullRequests implements IPullRequestInterface {
     merged_at: string;

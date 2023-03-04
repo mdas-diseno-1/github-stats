@@ -4,7 +4,8 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 export class UserActivityData {
     @PrimaryGeneratedColumn()
     id: number
-
+    name: string
+    month: string
     @Column()
     pullRequestsExecuted: number
 }
