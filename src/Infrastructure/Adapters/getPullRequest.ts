@@ -3,6 +3,8 @@ import { string } from "yargs";
 
 const axios = require('axios');
 let data = '';
+let linesdeleted='';
+let linesadded='';
 
 export const syncGetPullRequestsExecuted = async (userName: string, month: string): Promise<string> => {
     console.log(` user name: ${userName} , month: ${month}`);
@@ -17,3 +19,4 @@ export const syncGetPullRequestsExecuted = async (userName: string, month: strin
 export default {
     syncGetPullRequestsExecuted: syncGetPullRequestsExecuted,
 }
+
